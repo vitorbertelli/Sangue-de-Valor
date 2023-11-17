@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SangueDeValor.Aplicacao.DTOs;
 using SangueDeValor.Aplicacao.Interfaces;
@@ -7,6 +9,7 @@ namespace SangueDeValor.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class CategoriaController : ControllerBase
 {
     private readonly ICategoriaServico _categoriaServico;

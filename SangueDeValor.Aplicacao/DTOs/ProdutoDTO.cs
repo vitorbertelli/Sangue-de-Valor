@@ -8,6 +8,7 @@ namespace SangueDeValor.Aplicacao.DTOs;
 
 public class ProdutoDTO
 {
+    [Key]
     public int Id { get; set; }
     [Required(ErrorMessage = "Nome do produto não pode ser nulo.")]
     [MaxLength(50)]
