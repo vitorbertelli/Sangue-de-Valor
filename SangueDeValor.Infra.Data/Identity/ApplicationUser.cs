@@ -4,4 +4,5 @@ namespace SangueDeValor.Infra.Data.Identity;
 
 public class ApplicationUser : IdentityUser
 {
+
 }

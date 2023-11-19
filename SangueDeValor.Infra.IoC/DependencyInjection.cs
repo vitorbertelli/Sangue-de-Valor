@@ -35,10 +35,13 @@ public static class DependencyInjection
         services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
         services.AddScoped<IParceiroRepositorio, ParceiroRepositorio>();
         services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+        services.AddScoped<IDoadorRepositorio, DoadorRepositorio>();
 
         services.AddScoped<ICategoriaServico, CategoriaServico>();
         services.AddScoped<IParceiroServico, ParceiroServico>();
         services.AddScoped<IProdutoServico, ProdutoServico>();
+        services.AddScoped<IDoadorServico, DoadorServico>();
+        services.AddScoped<IAutenticacaoServico, AutenticacaoServico>();
         services.AddAutoMapper(typeof(MapeamentoProfile));
 
         services.AddAuthentication(options =>

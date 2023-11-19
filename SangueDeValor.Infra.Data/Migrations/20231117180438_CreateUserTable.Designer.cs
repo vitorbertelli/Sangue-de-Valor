@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SangueDeValor.Infra.Data.Context;
 
@@ -10,9 +11,11 @@ using SangueDeValor.Infra.Data.Context;
 namespace SangueDeValor.Infra.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231117180438_CreateUserTable")]
+    partial class CreateUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,6 +195,7 @@ namespace SangueDeValor.Infra.Data.Migrations
                         .HasColumnType("varchar(250)");
 
                     b.Property<string>("Imagem")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
@@ -204,7 +208,7 @@ namespace SangueDeValor.Infra.Data.Migrations
                         .HasPrecision(5, 1)
                         .HasColumnType("decimal(5,1)");
 
-                    b.Property<int?>("Pontos")
+                    b.Property<int>("Pontos")
                         .HasColumnType("int");
 
                     b.Property<string>("Senha")
@@ -215,7 +219,7 @@ namespace SangueDeValor.Infra.Data.Migrations
                     b.Property<int>("TipoSanguineo")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("UltimaDoacao")
+                    b.Property<DateTime>("UltimaDoacao")
                         .HasColumnType("datetime");
 
                     b.HasKey("Id");

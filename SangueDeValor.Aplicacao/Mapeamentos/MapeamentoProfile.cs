@@ -12,5 +12,6 @@ public class MapeamentoProfile : Profile
         CreateMap<Categoria, CategoriaDTO>().ReverseMap();
         CreateMap<Parceiro, ParceiroDTO>().ReverseMap();
         CreateMap<Produto, ProdutoDTO>().ReverseMap();
+        CreateMap<Doador, DoadorDTO>().ReverseMap();
     }
 }
